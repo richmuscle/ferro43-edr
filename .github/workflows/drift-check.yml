@@ -1,0 +1,24 @@
+---
+name: Branch Protection Drift Check
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+      - name: Check for branch protection drift
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: tooling/repo-config/check-protection-drift.sh

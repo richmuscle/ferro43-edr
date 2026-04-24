@@ -1,0 +1,37 @@
+---
+# Declarative branch protection for ferro43-edr.
+# Applied by: make apply-branch-protection
+# Drift checked by: .github/workflows/drift-check.yml (weekly)
+
+repository: ferro43-edr
+branch: main
+
+protection:
+  required_status_checks:
+    strict: true
+    contexts:
+      - "Lint / yamllint"
+      - "Lint / ansible-lint"
+      - "Lint / shellcheck"
+      - "Lint / markdownlint"
+      - "Commit Checks / commitlint"
+      - "Commit Checks / signed-commits"
+
+  enforce_admins: true
+
+  required_signatures: true
+
+  required_linear_history: true
+
+  allow_force_pushes: false
+
+  allow_deletions: false
+
+# Notes:
+# - Molecule is path-filtered (ansible/roles/**) so it is not a required
+#   status check — it only runs when role files change.
+# - No required_pull_request_reviews: single operator, no approvals needed.
+#   PRs are still required because direct pushes are blocked by enforce_admins
+#   + required status checks.
+# - Status check names use the format "Workflow Name / job-name". Verify
+#   these match after the first PR triggers the workflows.
