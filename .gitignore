@@ -1,0 +1,20 @@
+# Ansible
+*.retry
+.ansible/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Secrets — never commit
+*.pem
+*.key
+*.vault-pass
+vault-password*
+.env
+.envrc
