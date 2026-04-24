@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
+  "semanticCommits": "enabled",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  },
+  "packageRules": [
+    {
+      "description": "Security updates: auto-merge on CI green",
+      "matchCategories": ["security"],
+      "automerge": true
+    },
+    {
+      "description": "Minor and patch: weekly batch, auto-merge",
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "schedule": ["before 9am on Monday"]
+    },
+    {
+      "description": "Major: manual review required",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
+  ]
+}
