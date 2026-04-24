@@ -29,7 +29,7 @@ The reasons:
 4. **Reconnection behavior.** WireGuard silently reconnects when the endpoint becomes reachable again. No session renegotiation, no handshake timeout. This matters for a workstation that sleeps, changes networks, and resumes.
 5. **Killswitch integration.** firewalld zones make it straightforward to implement "drop everything except WireGuard and loopback" as the default policy.
 
-**Endpoint class is a separate architectural decision.** This ADR selects WireGuard as the protocol. The choice of endpoint class — self-hosted VPS, commercial VPN provider, or split-tunnel to specific destinations — affects trust model, availability, and cost. It is deferred to ADR-008, which must be written before Phase 4 implementation begins. The Ansible role accepts the endpoint as a variable.
+**Endpoint class is a separate architectural decision.** This ADR selects WireGuard as the protocol. The choice of endpoint class — self-hosted VPS, commercial VPN provider, or split-tunnel to specific destinations — affects trust model, availability, and cost. It is deferred to ADR-009, which must be written before Phase 4 implementation begins. The Ansible role accepts the endpoint as a variable.
 
 ## Consequences
 

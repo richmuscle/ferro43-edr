@@ -10,12 +10,12 @@ protection:
   required_status_checks:
     strict: true
     contexts:
-      - "Lint / yamllint"
-      - "Lint / ansible-lint"
-      - "Lint / shellcheck"
-      - "Lint / markdownlint"
-      - "Commit Checks / commitlint"
-      - "Commit Checks / signed-commits"
+      - yamllint
+      - ansible-lint
+      - shellcheck
+      - markdownlint
+      - commitlint
+      - signed-commits
 
   enforce_admins: true
 
@@ -33,5 +33,5 @@ protection:
 # - No required_pull_request_reviews: single operator, no approvals needed.
 #   PRs are still required because direct pushes are blocked by enforce_admins
 #   + required status checks.
-# - Status check names use the format "Workflow Name / job-name". Verify
-#   these match after the first PR triggers the workflows.
+# - Status check names are bare job names (e.g., "yamllint"), not
+#   "Workflow / job" format. Verified against live check runs on PR #1.
