@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install yamllint
-        run: pip install yamllint
+      - name: Install lint dependencies
+        run: pip install -r tooling/ci/requirements-lint.txt
       - name: Run yamllint
         run: yamllint -c .yamllint.yml .
 
@@ -25,8 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install ansible-lint
-        run: pip install ansible-lint ansible-core
+      - name: Install lint dependencies
+        run: pip install -r tooling/ci/requirements-lint.txt
       - name: Run ansible-lint
         env:
           ANSIBLE_CONFIG: ansible/ansible.cfg

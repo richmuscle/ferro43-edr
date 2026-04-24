@@ -17,9 +17,12 @@ repos:
         args: ['-c', '.yamllint.yml']
 
   - repo: https://github.com/ansible/ansible-lint
-    rev: v24.10.0
+    rev: v25.12.2
     hooks:
       - id: ansible-lint
+        # Upstream hook pins language_version: '3.13' but Fedora 43 ships 3.14.
+        # The code works on 3.14; this overrides the hook's Python specifier.
+        language_version: python3.14
         files: ^ansible/
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
