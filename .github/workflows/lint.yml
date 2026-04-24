@@ -1,0 +1,52 @@
+---
+name: Lint
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install yamllint
+        run: pip install yamllint
+      - name: Run yamllint
+        run: yamllint -c .yamllint.yml .
+
+  ansible-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ansible-lint
+        run: pip install ansible-lint ansible-core
+      - name: Run ansible-lint
+        run: ansible-lint
+
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run shellcheck
+        run: |
+          find . -name '*.sh' -not -path './.git/*' -print0 \
+            | xargs -0 --no-run-if-empty shellcheck
+
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+      - name: Run markdownlint
+        run: markdownlint-cli2 '**/*.md'

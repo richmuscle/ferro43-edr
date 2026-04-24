@@ -1,0 +1,37 @@
+---
+name: Commit Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install commitlint
+        run: npm ci --ignore-scripts
+      - name: Validate commit messages
+        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }}
+
+  signed-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all PR commits are signed
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          while read -r sha verified; do
+            if [ "$verified" != "true" ]; then
+              echo "::error::Commit $sha is unsigned or unverifiable."
+              exit 1
+            fi
+          done < <(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits --paginate --jq '.[] | [.sha, .commit.verification.verified] | @tsv')
