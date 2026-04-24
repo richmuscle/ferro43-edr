@@ -4,6 +4,8 @@ Single-host endpoint detection and hardening for a Fedora 43 workstation, built 
 
 This is not a SOC. It is an EDR plus hostile-LAN network posture, with discipline, reproducibility, and tested detections. The value is the rigor, not the component count.
 
+This repository contains tooling, threat model, and documentation. The operator's workstation state, keys, secrets, and identifying artifacts are not part of this repo.
+
 ## Host
 
 - Fedora 43, Intel i9-14900K, RTX 5070 Ti, 32 GB RAM
