@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: richmuscle
   role_name: wireguard
   namespace: ferro43
   description: "WireGuard VPN transport with killswitch"
@@ -8,5 +9,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - "43"
+        - all
 dependencies: []

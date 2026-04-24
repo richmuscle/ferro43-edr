@@ -34,4 +34,8 @@ jobs:
               echo "::error::Commit $sha is unsigned or unverifiable."
               exit 1
             fi
-          done < <(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits --paginate --jq '.[] | [.sha, .commit.verification.verified] | @tsv')
+          done < <(
+            gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits" \
+              --paginate \
+              --jq '.[] | [.sha, .commit.verification.verified] | @tsv'
+          )

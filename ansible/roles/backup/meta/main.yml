@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: richmuscle
   role_name: backup
   namespace: ferro43
   description: "Backup and recovery tooling"
@@ -8,5 +9,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - "43"
+        - all
 dependencies: []

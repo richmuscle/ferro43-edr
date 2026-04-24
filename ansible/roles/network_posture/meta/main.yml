@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: richmuscle
   role_name: network_posture
   namespace: ferro43
   description: "Network posture: egress deny, DoT, protocol hardening"
@@ -8,5 +9,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - "43"
+        - all
 dependencies: []

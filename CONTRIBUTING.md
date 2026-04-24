@@ -26,7 +26,8 @@ Scopes are **required** and enforced by commitlint. Allowed scopes:
 Adding a new scope requires updating `.commitlintrc.yml` — this is intentional friction.
 
 Examples:
-```
+
+```text
 feat(falco): add detection for container escape via nsenter
 fix(network-posture): close egress gap for UDP/53 to non-resolver
 docs(runbook): add chaos drill writeup for WireGuard endpoint failure

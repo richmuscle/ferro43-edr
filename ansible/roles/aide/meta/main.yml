@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: richmuscle
   role_name: aide
   namespace: ferro43
   description: "AIDE filesystem integrity (scheduled)"
@@ -8,5 +9,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - "43"
+        - all
 dependencies: []

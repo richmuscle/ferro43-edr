@@ -28,6 +28,8 @@ jobs:
       - name: Install ansible-lint
         run: pip install ansible-lint ansible-core
       - name: Run ansible-lint
+        env:
+          ANSIBLE_CONFIG: ansible/ansible.cfg
         run: ansible-lint
 
   shellcheck:

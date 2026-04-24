@@ -1,5 +1,5 @@
 ---
-- name: ferro43-edr site playbook
+- name: Ferro43-edr site playbook
   hosts: ferro43
   roles:
     - role: hardening

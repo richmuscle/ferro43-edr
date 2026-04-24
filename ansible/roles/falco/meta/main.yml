@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: richmuscle
   role_name: falco
   namespace: ferro43
   description: "Falco runtime detection (modern_ebpf)"
@@ -8,5 +9,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - "43"
+        - all
 dependencies: []

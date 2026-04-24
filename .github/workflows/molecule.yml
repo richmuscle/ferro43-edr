@@ -18,9 +18,9 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install ansible-core molecule molecule-docker
-      - name: Switch Molecule driver to docker for CI
-        run: find ansible/roles -path '*/molecule/default/molecule.yml' -exec sed -i 's/name: podman/name: docker/' {} +
       - name: Run Molecule tests
+        env:
+          MOLECULE_DRIVER_NAME: docker
         run: |
           for role in ansible/roles/*/; do
             if [ -d "${role}molecule" ]; then
