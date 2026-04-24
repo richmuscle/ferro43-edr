@@ -1,0 +1,5 @@
+---
+profile: production
+project_dir: ansible/
+exclude_paths:
+  - ansible/collections/

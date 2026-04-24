@@ -3,6 +3,9 @@
 .ansible/
 ansible/collections/
 
+# Node (commitlint)
+node_modules/
+
 # Editors
 .vscode/
 .idea/

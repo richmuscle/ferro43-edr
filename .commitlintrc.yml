@@ -1,0 +1,22 @@
+---
+extends:
+  - '@commitlint/config-conventional'
+rules:
+  scope-enum:
+    - 2
+    - always
+    - - hardening
+      - network-posture
+      - wireguard
+      - falco
+      - auditd
+      - aide
+      - vector
+      - backup
+      - ci
+      - docs
+      - deps
+      - meta
+  scope-empty:
+    - 2
+    - never

@@ -19,6 +19,12 @@ Format: `type(scope): description`
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`
 
+Scopes are **required** and enforced by commitlint. Allowed scopes:
+
+`hardening`, `network-posture`, `wireguard`, `falco`, `auditd`, `aide`, `vector`, `backup`, `ci`, `docs`, `deps`, `meta`
+
+Adding a new scope requires updating `.commitlintrc.yml` — this is intentional friction.
+
 Examples:
 ```
 feat(falco): add detection for container escape via nsenter
