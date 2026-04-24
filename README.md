@@ -76,7 +76,7 @@ ferro43-edr/
 ├── DECISIONS/
 ├── ansible/
 │   ├── inventory/
-│   ├── roles/{hardening,network-posture,wireguard,falco,auditd,aide,vector,backup}/
+│   ├── roles/{hardening,network_posture,wireguard,falco,auditd,aide,vector,backup}/
 │   ├── playbooks/
 │   └── molecule/
 ├── detections/

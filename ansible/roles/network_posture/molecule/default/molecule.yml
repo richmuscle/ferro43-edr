@@ -1,0 +1,14 @@
+---
+# Driver: podman for local development (native on Fedora 43, rootless).
+# CI overrides to docker: the molecule workflow patches this file with sed
+# before running tests. See .github/workflows/molecule.yml.
+driver:
+  name: podman
+platforms:
+  - name: ferro43-test
+    image: registry.fedoraproject.org/fedora:43
+    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

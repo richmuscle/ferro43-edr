@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: auditd
+  namespace: ferro43
+  description: "auditd audit trail"
+  license: MIT
+  min_ansible_version: "2.17"
+  platforms:
+    - name: Fedora
+      versions:
+        - "43"
+dependencies: []

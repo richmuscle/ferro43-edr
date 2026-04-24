@@ -1,0 +1,8 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Placeholder verification
+      ansible.builtin.assert:
+        that:
+          - true

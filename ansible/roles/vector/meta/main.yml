@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: vector
+  namespace: ferro43
+  description: "Vector log shipping to Grafana Cloud Loki"
+  license: MIT
+  min_ansible_version: "2.17"
+  platforms:
+    - name: Fedora
+      versions:
+        - "43"
+dependencies: []

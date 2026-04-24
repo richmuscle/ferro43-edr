@@ -1,0 +1,5 @@
+---
+# Security tooling resource budget — enforced by perf regression CI (Phase 8)
+ferro43_slo_ram_steady_state_mb: 2048
+ferro43_slo_ram_transient_peak_mb: 700
+ferro43_slo_cpu_sustained_pct: 5

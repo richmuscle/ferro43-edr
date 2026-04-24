@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: network_posture
+  namespace: ferro43
+  description: "Network posture: egress deny, DoT, protocol hardening"
+  license: MIT
+  min_ansible_version: "2.17"
+  platforms:
+    - name: Fedora
+      versions:
+        - "43"
+dependencies: []

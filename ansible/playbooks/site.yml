@@ -1,0 +1,13 @@
+---
+- name: ferro43-edr site playbook
+  hosts: ferro43
+  roles:
+    - role: hardening
+    # Roles below are enabled as they gain tasks in later phases
+    # - role: network_posture
+    # - role: wireguard
+    # - role: falco
+    # - role: auditd
+    # - role: aide
+    # - role: vector
+    # - role: backup

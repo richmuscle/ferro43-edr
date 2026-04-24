@@ -1,0 +1,4 @@
+---
+# Host-specific configuration for ferro43 workstation
+# Secrets belong in vault.yml (created in Phase 4 when first secret lands)
+ferro43_hostname: ferro43

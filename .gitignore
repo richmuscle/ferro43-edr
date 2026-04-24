@@ -1,6 +1,7 @@
 # Ansible
 *.retry
 .ansible/
+ansible/collections/
 
 # Editors
 .vscode/

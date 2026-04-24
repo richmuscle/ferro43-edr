@@ -1,0 +1,4 @@
+---
+- name: Verify connectivity
+  ansible.builtin.debug:
+    msg: "ferro43-edr hardening role loaded on {{ ansible_distribution }} {{ ansible_distribution_version }}"
