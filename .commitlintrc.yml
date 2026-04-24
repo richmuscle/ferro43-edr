@@ -20,3 +20,8 @@ rules:
   scope-empty:
     - 2
     - never
+  subject-case:
+    - 2
+    - never
+    - - pascal-case
+      - upper-case
